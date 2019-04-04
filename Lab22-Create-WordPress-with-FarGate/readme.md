@@ -9,13 +9,13 @@ To create the ALB, navigate to the [EC2 Console](https://console.aws.amazon.com/
 
 ![img1]
 
-[img1]:https://kapilpendse.github.io/techshift-accelerator-content/2-Modernize/Lab22-Create-WordPress-with-FarGate/img/2-LoadBalancer.png
+[img1]:https://github.com/tohwsw/awsecslab/Lab22-Create-WordPress-with-FarGate/img/2-LoadBalancer.png
 
 Name your ALB **EcsLabAlb** and add an HTTP listener on port 80:
 
 ![img2]
 
-[img2]:https://kapilpendse.github.io/techshift-accelerator-content/2-Modernize/Lab22-Create-WordPress-with-FarGate/img/2-LoadBalancer2.png
+[img2]:https://github.com/tohwsw/awsecslab/Lab22-Create-WordPress-with-FarGate/img/2-LoadBalancer2.png
 
 **Note**: in a production environment, you should also have a secure listener on port 443. This will require an SSL certificate, which can be obtained from [AWS Certificate Manager](https://aws.amazon.com/certificate-manager/), or from your registrar/CA. For the purposes of this lab, we will only create the insecure HTTP listener. DO NOT RUN THIS IN PRODUCTION.
 
@@ -23,7 +23,7 @@ Next, select your VPC and we need at least two subnets for high availability. Ma
 
 ![img3]
 
-[img3]:https://kapilpendse.github.io/techshift-accelerator-content/2-Modernize/Lab22-Create-WordPress-with-FarGate/img/2-LoadBalancer3.png
+[img3]:https://github.com/tohwsw/awsecslab/Lab22-Create-WordPress-with-FarGate/img/2-LoadBalancer3.png
 
 Click **Next**, and create a new security group (sgecslabloadbalancer) with the following rule:
 
@@ -35,7 +35,7 @@ Continue to the next step: **Configure Routing**. For this initial setup, we're 
 
 ![img4]
 
-[img4]:https://kapilpendse.github.io/techshift-accelerator-content/2-Modernize/Lab22-Create-WordPress-with-FarGate/img/2-LoadBalancer4.png
+[img4]:https://github.com/tohwsw/awsecslab/Lab22-Create-WordPress-with-FarGate/img/2-LoadBalancer4.png
 
 Click through the "Next:Register targets" step, and continue to the **Review** step. If your values look correct, click **Create**.
 
@@ -131,7 +131,7 @@ The **ecsCodeDeployRole** should look like the below.
 
 ![img111]
 
-[img111]: https://kapilpendse.github.io/techshift-accelerator-content/2-Modernize/Lab23-BlueGreen-Deployment-with-CodeDeploy/img/3-IAMrole.png
+[img111]: https://github.com/tohwsw/awsecslab/Lab23-BlueGreen-Deployment-with-CodeDeploy/img/3-IAMrole.png
 
 ## 9. Create the MySQL Service
 
@@ -143,29 +143,29 @@ Choose the mySQL web Task Definition you created in the previous section. Choose
 
 ![img5]
 
-[img5]:https://kapilpendse.github.io/techshift-accelerator-content/2-Modernize/Lab22-Create-WordPress-with-FarGate/img/2-mysql.png
+[img5]:https://github.com/tohwsw/awsecslab/Lab22-Create-WordPress-with-FarGate/img/2-mysql.png
 
 Configure the service to be Fargate as follows:
 
 ![img6]
 
-[img6]:https://kapilpendse.github.io/techshift-accelerator-content/2-Modernize/Lab22-Create-WordPress-with-FarGate/img/2-mysql2.png
+[img6]:https://github.com/tohwsw/awsecslab/Lab22-Create-WordPress-with-FarGate/img/2-mysql2.png
 
 ![img66]
 
-[img66]:https://kapilpendse.github.io/techshift-accelerator-content/2-Modernize/Lab22-Create-WordPress-with-FarGate/img/2-rollingupgrade.png
+[img66]:https://github.com/tohwsw/awsecslab/Lab22-Create-WordPress-with-FarGate/img/2-rollingupgrade.png
 
 Next configure the network by selecting the VPC and the 2 subnets.
 
 ![img7]
 
-[img7]:https://kapilpendse.github.io/techshift-accelerator-content/2-Modernize/Lab22-Create-WordPress-with-FarGate/img/2-mysql3.png
+[img7]:https://github.com/tohwsw/awsecslab/Lab22-Create-WordPress-with-FarGate/img/2-mysql3.png
 
 Click on the mySQL--XXX security group to add a new rule for MYSQL at port 3306.
 
 ![img8]
 
-[img8]:https://kapilpendse.github.io/techshift-accelerator-content/2-Modernize/Lab22-Create-WordPress-with-FarGate/img/2-mysql4.png
+[img8]:https://github.com/tohwsw/awsecslab/Lab22-Create-WordPress-with-FarGate/img/2-mysql4.png
 
 Leave the Load Balancing option as **None**.
 
@@ -173,13 +173,13 @@ On the Service Discovery section, enter the namespace as **ecslab**.
 
 ![img9]
 
-[img9]:https://kapilpendse.github.io/techshift-accelerator-content/2-Modernize/Lab22-Create-WordPress-with-FarGate/img/2-mysql5.png
+[img9]:https://github.com/tohwsw/awsecslab/Lab22-Create-WordPress-with-FarGate/img/2-mysql5.png
 
 Leave the Auto Scaling as **None**. Click Next Step.
 
 ![img10]
 
-[img10]:https://kapilpendse.github.io/techshift-accelerator-content/2-Modernize/Lab22-Create-WordPress-with-FarGate/img/2-mysql6.png
+[img10]:https://github.com/tohwsw/awsecslab/Lab22-Create-WordPress-with-FarGate/img/2-mysql6.png
 
 On the review page, click Create Service.
 
@@ -190,13 +190,13 @@ Go to [CloudWatch Console](https://console.aws.amazon.com/cloudwatch/home) to vi
 
 ![img11]
 
-[img11]:https://kapilpendse.github.io/techshift-accelerator-content/2-Modernize/Lab22-Create-WordPress-with-FarGate/img/2-mysql7.png
+[img11]:https://github.com/tohwsw/awsecslab/Lab22-Create-WordPress-with-FarGate/img/2-mysql7.png
 
 Go to [Route53 Console](https://console.aws.amazon.com/route53/home) to view the **mysql-service.ecslab** entry in the private DNS host.
 
 ![img12]
 
-[img12]:https://kapilpendse.github.io/techshift-accelerator-content/2-Modernize/Lab22-Create-WordPress-with-FarGate/img/2-route53.png
+[img12]:https://github.com/tohwsw/awsecslab/Lab22-Create-WordPress-with-FarGate/img/2-route53.png
 
 ## 10. Create the WordPress Service
 
@@ -205,49 +205,49 @@ Choose the WordPress Task Definition you created in the previous section. Choose
 
 ![img13]
 
-[img13]:https://kapilpendse.github.io/techshift-accelerator-content/2-Modernize/Lab22-Create-WordPress-with-FarGate/img/2-wordpress.png
+[img13]:https://github.com/tohwsw/awsecslab/Lab22-Create-WordPress-with-FarGate/img/2-wordpress.png
 
 Configure the service to be Fargate as follows:
 
 ![img14]
 
-[img14]:https://kapilpendse.github.io/techshift-accelerator-content/2-Modernize/Lab22-Create-WordPress-with-FarGate/img/2-wordpress2.png
+[img14]:https://github.com/tohwsw/awsecslab/Lab22-Create-WordPress-with-FarGate/img/2-wordpress2.png
 
 ![img15]
 
-[img15]:https://kapilpendse.github.io/techshift-accelerator-content/2-Modernize/Lab22-Create-WordPress-with-FarGate/img/2-wordpress3.png
+[img15]:https://github.com/tohwsw/awsecslab/Lab22-Create-WordPress-with-FarGate/img/2-wordpress3.png
 
 Next configure the network by selecting the VPC and the 2 subnets.
 
 ![img16]
 
-[img16]:https://kapilpendse.github.io/techshift-accelerator-content/2-Modernize/Lab22-Create-WordPress-with-FarGate/img/2-wordpress4.png
+[img16]:https://github.com/tohwsw/awsecslab/Lab22-Create-WordPress-with-FarGate/img/2-wordpress4.png
 
 Choose the Load Balancing option as **Application Load Balancer** For Load Balancer name, choose **EcsLabAlb**. Click Add to load balancer.
 
 ![img17]
 
-[img17]:https://kapilpendse.github.io/techshift-accelerator-content/2-Modernize/Lab22-Create-WordPress-with-FarGate/img/2-wordpress5.png
+[img17]:https://github.com/tohwsw/awsecslab/Lab22-Create-WordPress-with-FarGate/img/2-wordpress5.png
 
 ![img18]
 
-[img18]:https://kapilpendse.github.io/techshift-accelerator-content/2-Modernize/Lab22-Create-WordPress-with-FarGate/img/2-wordpress6.png
+[img18]:https://github.com/tohwsw/awsecslab/Lab22-Create-WordPress-with-FarGate/img/2-wordpress6.png
 
 ![img19]
 
-[img19]:https://kapilpendse.github.io/techshift-accelerator-content/2-Modernize/Lab22-Create-WordPress-with-FarGate/img/2-wordpress7.png
+[img19]:https://github.com/tohwsw/awsecslab/Lab22-Create-WordPress-with-FarGate/img/2-wordpress7.png
 
 On the Service Discovery section, uncheck the option. Click **Next Step**.
 
 ![img20]
 
-[img20]:https://kapilpendse.github.io/techshift-accelerator-content/2-Modernize/Lab22-Create-WordPress-with-FarGate/img/2-wordpress8.png
+[img20]:https://github.com/tohwsw/awsecslab/Lab22-Create-WordPress-with-FarGate/img/2-wordpress8.png
 
 Leave the Auto Scaling as **None**. Click **Next Step**.
 
 ![img21]
 
-[img21]:https://kapilpendse.github.io/techshift-accelerator-content/2-Modernize/Lab22-Create-WordPress-with-FarGate/img/2-wordpress9.png
+[img21]:https://github.com/tohwsw/awsecslab/Lab22-Create-WordPress-with-FarGate/img/2-wordpress9.png
 
 On the review page, click **Create Service**.
 
@@ -258,7 +258,7 @@ Go to [CloudWatch Console](https://console.aws.amazon.com/cloudwatch/home) to vi
 
 ![img22]
 
-[img22]:https://kapilpendse.github.io/techshift-accelerator-content/2-Modernize/Lab22-Create-WordPress-with-FarGate/img/2-wordpress10.png
+[img22]:https://github.com/tohwsw/awsecslab/Lab22-Create-WordPress-with-FarGate/img/2-wordpress10.png
 
 Wordpress performs a redirect at first run and the return code is 302.
 
@@ -266,7 +266,7 @@ Go to the [EC2 Console](https://console.aws.amazon.com/ec2/home) to add the Succ
 
 ![img23]
 
-[img23]:https://kapilpendse.github.io/techshift-accelerator-content/2-Modernize/Lab22-Create-WordPress-with-FarGate/img/2-healthcheck.png
+[img23]:https://github.com/tohwsw/awsecslab/Lab22-Create-WordPress-with-FarGate/img/2-healthcheck.png
 
 ## 11. Testing our service deployments from the console and the ALB
 
@@ -277,7 +277,7 @@ We can also test from the ALB itself. To find the DNS A record for your ALB, nav
 
 ![img25]
 
-[img25]:https://kapilpendse.techshift-accelerator-content/2-Modernize/Lab22-Create-WordPress-with-FarGate/img/2-wordpresspage.png
+[img25]:https://github.com/tohwsw/awsecslab/Lab22-Create-WordPress-with-FarGate/img/2-wordpresspage.png
 
 ## That's a wrap!
 

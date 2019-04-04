@@ -2,21 +2,6 @@
 
 # Getting Started with ECS
 
-## Overview
-
-This lab introduces the basics of working with microservices and [ECS](https://aws.amazon.com/ecs/). This includes: setting up the initial ECS cluster, deploying the WordPress and MySQL container from DockerHub, service discovery via Route53 and deployment of the containers with traffic routed through an [ALB](https://aws.amazon.com/elasticloadbalancing/applicationloadbalancer/).
-
-**Note**: You should have containers and Docker knowledge before attempting this lab. You should know the basics of creating a Docker file and a Docker image, and checking in the image into a Docker registry. Otherwise, please complete part 1 and 2 of the [Get Started with Docker tutorial](https://docs.docker.com/get-started/).
-
-The lab architecture is as shown below. WordPress and MySQL containers shall be deployed using AWS Fargate, which allows you to run containers without managing servers. We shall deploy one instance of MySQL container and 2 instances of WordPress. MySQL container registers with a Route53 private hosted zone. WordPress discovers the MySQL via a service lookup to Route53. We will use an Application load balancer to route the requests to WordPress.
-
-![img1]
-
-[img1]:https://kapilpendse.github.io/techshift-accelerator-content/2-Modernize/Lab21-Getting-Started-with-ECS/img/1-lab-architecture.png
-
-**Note**: MySQL is deployed in containers here to illustrate how Microservices in containers can discover one another. It is not recommended to run databases in containers in a production environment. Docker containers are designed to run stateless applications instead of stateful applications. Database services provided by your cloud provider are the best way to go for production (and that means also staging due to prod/staging parity) databases. Use RDS if you’re on AWS. This will simplify a lot of management tasks such as updating minor versions, handling regular backups and even scaling up.
-
-You'll need to have a working AWS account to use this lab.
 
 ## 1. Setting up the VPC
 
@@ -56,13 +41,13 @@ In the Create Role screen, enter **AmazonEC2ContainerServiceforEC2Role** **Amazo
 
 ![img2]
 
-[img2]:https://kapilpendse.github.io/techshift-accelerator-content/2-Modernize/Lab21-Getting-Started-with-ECS/img/1-ecslabinstanceprofile1.png
+[img2]:https://github.com/tohwsw/awsecslab/Lab21-Getting-Started-with-ECS/img/1-ecslabinstanceprofile1.png
 
 In the Review screen, enter **ecslabinstanceprofile** for the Role name and click **Create Role**.
 
 ![img3]
 
-[img3]:https://kapilpendse.github.io/techshift-accelerator-content/2-Modernize/Lab21-Getting-Started-with-ECS/img/1-ecsinstanceprofile2.png
+[img3]:https://github.com/tohwsw/awsecslab/Lab21-Getting-Started-with-ECS/img/1-ecsinstanceprofile2.png
 
 **Note**: By default, the ECS first run wizard creates **ecsInstanceRole** for you to use. However, it's a best practice to create a specific role for your use so that we can add more policies in the future when we need to.
 
@@ -87,11 +72,11 @@ In the next screen, configure the cluster as follows:
 
 ![img4]
 
-[img4]:https:/kapilpendse.github.io/techshift-accelerator-content/2-Modernize/Lab21-Getting-Started-with-ECS/img/1-ecslabpubliccluster.png
+[img4]:https://github.com/tohwsw/awsecslab/Lab21-Getting-Started-with-ECS/img/1-ecslabpubliccluster.png
 
 ![img5]
 
-[img5]:https://kapilpendse.github.io/techshift-accelerator-content/2-Modernize/Lab21-Getting-Started-with-ECS/img/1-ecslabpubliccluster2.png
+[img5]:https://github.com/tohwsw/awsecslab/Lab21-Getting-Started-with-ECS/img/1-ecslabpubliccluster2.png
 
 Click Create. It will take a few minutes to create the cluster.
 
@@ -113,13 +98,13 @@ Choose **Elastic Container Service** and then **Elastic Container Service Task**
 
 ![img6]
 
-[img6]:https://kapilpendse.github.io/techshift-accelerator-content/2-Modernize/Lab21-Getting-Started-with-ECS/img/1-taskexecutionrole.png
+[img6]:https://github.com/tohwsw/awsecslab/Lab21-Getting-Started-with-ECS/img/1-taskexecutionrole.png
 
 Next click on **Permissions** and then select **AmazonECSTaskExecutionRolePolicy**
 
 ![img7]
 
-[img7]:https://kapilpendse.github.io/techshift-accelerator-content/2-Modernize/Lab21-Getting-Started-with-ECS/img/1-taskexecutionrole2.png
+[img7]:https://github.com/tohwsw/awsecslab/Lab21-Getting-Started-with-ECS/img/1-taskexecutionrole2.png
 
 Name the role **ecsTaskExecutionRole**
 
@@ -231,13 +216,13 @@ Next, create the CloudWatch log group **/ecs/fargate**. Go to [CloudWatch Consol
 
 ![img8]
 
-[img8]:https://kapilpendse.github.io/techshift-accelerator-content/2-Modernize/Lab21-Getting-Started-with-ECS/img/1-cloudwatch.png
+[img8]:https://github.com/tohwsw/awsecslab/Lab21-Getting-Started-with-ECS/img/1-cloudwatch.png
 
 Give the log group name **/ecs/fargate**
 
 ![img9]
 
-[img9]:https://kapilpendse.github.io/techshift-accelerator-content/2-Modernize/Lab21-Getting-Started-with-ECS/img/1-cloudwatch2.png
+[img9]:https://github.com/tohwsw/awsecslab/Lab21-Getting-Started-with-ECS/img/1-cloudwatch2.png
 
 ## That's a wrap!
 
