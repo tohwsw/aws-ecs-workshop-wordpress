@@ -96,7 +96,7 @@ You are now be taken to the Deployments tab of your service where you can see de
 
 ![img2]
 
-[img2]: https://github.com/tohwsw/awsecslab/Lab23-BlueGreen-Deployment-with-CodeDeploy/img/3-deployment.png
+[img2]: https://github.com/tohwsw/awsecslab/blob/master/Lab23-BlueGreen-Deployment-with-CodeDeploy/img/3-deployment.png
 
 You can click the deployment ID to go to the details view for the CodeDeploy deployment.
 
@@ -104,7 +104,7 @@ From there you can see the deployments status:
 
 ![img3]
 
-[img3]: https://github.com/tohwsw/awsecslab/Lab23-BlueGreen-Deployment-with-CodeDeploy/img/3-deployment2.png
+[img3]: https://github.com/tohwsw/awsecslab/blob/master/Lab23-BlueGreen-Deployment-with-CodeDeploy/img/3-deployment2.png
 
 If you notice issues, you can stop and roll back the deployment. This shifts traffic back to the original (blue) task set and stops the deployment.
 

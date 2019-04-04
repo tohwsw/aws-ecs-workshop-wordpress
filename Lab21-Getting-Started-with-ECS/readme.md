@@ -41,13 +41,13 @@ In the Create Role screen, enter **AmazonEC2ContainerServiceforEC2Role** **Amazo
 
 ![img2]
 
-[img2]:https://github.com/tohwsw/awsecslab/Lab21-Getting-Started-with-ECS/img/1-ecslabinstanceprofile1.png
+[img2]:https://github.com/tohwsw/awsecslab/blob/master/Lab21-Getting-Started-with-ECS/img/1-ecslabinstanceprofile1.png
 
 In the Review screen, enter **ecslabinstanceprofile** for the Role name and click **Create Role**.
 
 ![img3]
 
-[img3]:https://github.com/tohwsw/awsecslab/Lab21-Getting-Started-with-ECS/img/1-ecsinstanceprofile2.png
+[img3]:https://github.com/tohwsw/awsecslab/blob/master/Lab21-Getting-Started-with-ECS/img/1-ecsinstanceprofile2.png
 
 **Note**: By default, the ECS first run wizard creates **ecsInstanceRole** for you to use. However, it's a best practice to create a specific role for your use so that we can add more policies in the future when we need to.
 
@@ -72,11 +72,11 @@ In the next screen, configure the cluster as follows:
 
 ![img4]
 
-[img4]:https://github.com/tohwsw/awsecslab/Lab21-Getting-Started-with-ECS/img/1-ecslabpubliccluster.png
+[img4]:https://github.com/tohwsw/awsecslab/blob/master/Lab21-Getting-Started-with-ECS/img/1-ecslabpubliccluster.png
 
 ![img5]
 
-[img5]:https://github.com/tohwsw/awsecslab/Lab21-Getting-Started-with-ECS/img/1-ecslabpubliccluster2.png
+[img5]:https://github.com/tohwsw/awsecslab/blob/master/Lab21-Getting-Started-with-ECS/img/1-ecslabpubliccluster2.png
 
 Click Create. It will take a few minutes to create the cluster.
 
@@ -98,13 +98,13 @@ Choose **Elastic Container Service** and then **Elastic Container Service Task**
 
 ![img6]
 
-[img6]:https://github.com/tohwsw/awsecslab/Lab21-Getting-Started-with-ECS/img/1-taskexecutionrole.png
+[img6]:https://github.com/tohwsw/awsecslab/blob/master/Lab21-Getting-Started-with-ECS/img/1-taskexecutionrole.png
 
 Next click on **Permissions** and then select **AmazonECSTaskExecutionRolePolicy**
 
 ![img7]
 
-[img7]:https://github.com/tohwsw/awsecslab/Lab21-Getting-Started-with-ECS/img/1-taskexecutionrole2.png
+[img7]:https://github.com/tohwsw/awsecslab/blob/master/Lab21-Getting-Started-with-ECS/img/1-taskexecutionrole2.png
 
 Name the role **ecsTaskExecutionRole**
 
@@ -216,13 +216,13 @@ Next, create the CloudWatch log group **/ecs/fargate**. Go to [CloudWatch Consol
 
 ![img8]
 
-[img8]:https://github.com/tohwsw/awsecslab/Lab21-Getting-Started-with-ECS/img/1-cloudwatch.png
+[img8]:https://github.com/tohwsw/awsecslab/blob/master/Lab21-Getting-Started-with-ECS/img/1-cloudwatch.png
 
 Give the log group name **/ecs/fargate**
 
 ![img9]
 
-[img9]:https://github.com/tohwsw/awsecslab/Lab21-Getting-Started-with-ECS/img/1-cloudwatch2.png
+[img9]:https://github.com/tohwsw/awsecslab/blob/master/Lab21-Getting-Started-with-ECS/img/1-cloudwatch2.png
 
 ## That's a wrap!
 
