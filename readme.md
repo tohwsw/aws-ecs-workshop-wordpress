@@ -12,7 +12,7 @@ The lab architecture is as shown below. WordPress and MySQL containers shall be 
 
 ![img1]
 
-[img1]:https://github.com/tohwsw/awsecslab/Lab21-Getting-Started-with-ECS/img/1-lab-architecture.png
+[img1]:https://github.com/tohwsw/awsecslab/blob/master/Lab21-Getting-Started-with-ECS/img/1-lab-architecture.png
 
 **Note**: MySQL is deployed in containers here to illustrate how Microservices in containers can discover one another. It is not recommended to run databases in containers in a production environment. Docker containers are designed to run stateless applications instead of stateful applications. Database services provided by your cloud provider are the best way to go for production (and that means also staging due to prod/staging parity) databases. Use RDS if you’re on AWS. This will simplify a lot of management tasks such as updating minor versions, handling regular backups and even scaling up.
 
